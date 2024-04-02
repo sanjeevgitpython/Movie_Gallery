@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<center>
+    <h1>{{ genre.name }}</h1>
+<div claas="container">
+    <div class="row mx_auto">
+        {% for movie in movies %}
+        <div class="my_bottom_margin col-9 col-sm-12 col-md-4 col-lg-4">
+            <div class="card text-center" style="height:350px;width:290px;">
+                <a href="{% url 'movie_app:movie_detail' movie.id %}"><img class="card-img-top my_image" src="{{movie.poster.url}}" alt="{{movie.name}}" style="height:250px;width:250px;"></a>
+                <div class="card-body">
+                    <h4>{{movie.title}}</h4>
+                    <p>{{movie.description}}</p>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div><br>
+</div>
+</center>
+
+{% block css %}
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .footer {
+        margin-top: auto;
+    }
+</style>
+{% endblock %}
+
+
+<div class="footer">
+    <!-- Your footer content goes here -->
+</div>
+{% endblock %}

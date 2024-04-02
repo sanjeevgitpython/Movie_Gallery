@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Add a New Movie</h2>
+  <form method="post" enctype="multipart/form-data">
+       {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Submit</button>
+  </form>
+
+
+{% block css %}
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .footer {
+        margin-top: auto;
+    }
+</style>
+{% endblock %}
+
+
+<div class="footer">
+    <!-- Your footer content goes here -->
+</div>
+{% endblock %}
+

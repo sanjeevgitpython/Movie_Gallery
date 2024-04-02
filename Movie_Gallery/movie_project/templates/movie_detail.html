@@ -1,0 +1,45 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+<br><center>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <img src="{{movie.poster.url}}" width="300" height="300"><br>
+        </div>
+        <div class="col-md-6">
+            <h3>{{movie.title}}</h3>
+            <h3>{{movie.description}}</h3>
+            <h3>{{movie.release_date}}</h3>
+            <h3>{{movie.actors}}</h3>
+            <a href="{{movie.youtube_link}}" target="_blank">{{movie.youtube_link}}</a><br><br>
+            {% if movie.user == request.user %}
+            <a class="btn btn-warning" href="{% url 'movie_app:movie_update' movie.id %}">update</a>
+            <a class="btn btn-danger" href="{% url 'movie_app:movie_delete' movie.id %}" onclick="return confirm('Are you sure?');">delete</a>
+            {% endif %}
+        </div>
+    </div>
+</div>
+    </center><br>
+{% block css %}
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .footer {
+        margin-top: auto;
+    }
+</style>
+{% endblock %}
+
+
+<div class="footer">
+    <!-- Your footer content goes here -->
+</div>
+
+{% endblock %}

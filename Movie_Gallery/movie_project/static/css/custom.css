@@ -1,0 +1,29 @@
+body{
+
+    font-family: 'Ubuntu', sans-serif;
+
+    }
+
+
+.my_image{
+    width:100%;
+    height:auto;
+}
+
+.my_image_padding{
+    padding:5px;
+}
+
+.my-footer{
+
+    background-color:#ADD8E6;
+    height:60px;
+
+    }
+
+.my-footer p{
+
+    padding-top:20px;
+    font-size:14px;
+
+    }

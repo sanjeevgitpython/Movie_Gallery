@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+<center>
+  <form action="login" method="post">
+      {% csrf_token %}
+     <br> Username<input type="text" name="username" placeholder="enter your username"><br>
+     <br>  Password<input type="password" name="password" placeholder="enter your password"><br>
+                 <br>  <input type="submit">
+
+  </form>
+</center>
+{% block css %}
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .footer {
+        margin-top: auto;
+    }
+</style>
+{% endblock %}
+
+
+<div class="footer">
+    <!-- Your footer content goes here -->
+</div>
+{% endblock %}

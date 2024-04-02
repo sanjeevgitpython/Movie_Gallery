@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="card">
+  <div class="card-header">
+    <div class="card-title">
+      <h3>Movie update</h3>
+      <div class="card-body">
+          <form method="post">
+          {% csrf_token %}
+          {{form.as_p}}
+          <button type="submit">submit</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% block css %}
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+        margin: 0;
+    }
+
+    .footer {
+        margin-top: auto;
+    }
+</style>
+{% endblock %}
+
+
+<div class="footer">
+    <!-- Your footer content goes here -->
+</div>
+{% endblock %}
